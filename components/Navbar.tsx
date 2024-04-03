@@ -4,6 +4,7 @@ import Link from "next/link";
 import { NavLinks } from "@/constant";
 import AuthProviders from "@/providers/AuthProviders";
 import { getCurrentUser } from "@/lib/session";
+import ProfileMenu from "./ProfileMenu";
 
 const Navbar =  async () => {
 
@@ -31,7 +32,7 @@ const Navbar =  async () => {
         {
           session?.user ? (
             <>
-              UserPhoto
+              <ProfileMenu session={session} />
 
               <Link href='/create-project'>
                 Share Work
